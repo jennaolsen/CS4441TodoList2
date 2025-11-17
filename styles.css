@@ -1,0 +1,74 @@
+body{
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background: #ffe3f0;
+}
+button{
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: #bbd0f8;
+    cursor: pointer;
+}
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px;
+}
+ul{
+    list-style: none;
+    background-color: #bbd0f8;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+    font-size: 19px;
+}
+#taskList li {
+    padding: 10px;
+    margin-bottom: 5px;
+    background: #bbd0f8;
+    border-radius: 6px;
+    cursor: pointer;
+}
+#taskList li.selected {
+    background-color: #7aa7fb;
+}
+#taskContainer{
+    width: 500px;
+    height: 600px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    padding: 10px;
+    overflow-y: auto;
+    background-color: #bbd0f8;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+}
+#taskModal{
+    display: flex;
+
+}
+input.modal{
+    margin: 5px;
+    padding: 10px;
+}
+button.modal{
+    padding: 0;
+    font-size: 8px;
+}
+#closeModalBtn{
+    display: flex;
+    justify-content: left;
+}
