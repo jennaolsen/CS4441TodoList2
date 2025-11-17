@@ -1,6 +1,7 @@
 let tasks = [];
 let editingIndex = null;
 let selectedIndex = null;
+const STORAGE_KEY = "tasks_project_a";
 
 // open modal
 document.getElementById("newTaskBtn").onclick = () => openModal();
@@ -22,7 +23,7 @@ document.getElementById("closeModalBtn").onclick = closeModal;
 
 // load tasks
 window.onload = () => {
-    tasks = JSON.parse(localStorage.getItem("tasks") || "[]");
+    tasks = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
     renderTasks();
 };
 
@@ -39,7 +40,7 @@ function closeModal() {
 
 function deleteTask(i) {
     tasks.splice(i, 1);
-    localStorage.setItem("tasks", JSON.stringify(tasks));
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
     if (tasks.length === 0) {
         selectedIndex = null;       // no tasks left
     } else if (i >= tasks.length) {
@@ -66,7 +67,7 @@ function saveTask() {
         tasks.push(task);
     }
 
-    localStorage.setItem("tasks", JSON.stringify(tasks));
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
     renderTasks();
     closeModal();
 }
@@ -92,7 +93,7 @@ function renderTasks() {
             li.querySelector("input").onclick = (e) => {
                 e.stopPropagation();
                 task.done = !task.done;
-                localStorage.setItem("tasks", JSON.stringify(tasks));
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
             };
 
             li.ondblclick = () => editTask(i);
