@@ -68,3 +68,6 @@ button.modal{
     display: flex;
     justify-content: left;
 }
+#taskModal{
+    display: none;
+}
